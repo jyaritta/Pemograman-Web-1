@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Halaman Pendaftaran Kursus</title>
+    <style>
+        h1 {
+            background-color: skyblue;
+            color: red;
+            margin: 0;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="width: 550px; padding: 0; margin: 20px auto; border: 3px solid grey">
+    <h1>Pendaftaran Kursus</h1>
+    <form>
+        <fieldset style="background-color: gray; margin: 0">
+            <h2 style="display: block; margin: 0">Data Diri</h2>
+            <table>
+                <tr>
+                    <td width="160">Nama</td>
+                    <td><input type="text" name="nama" size="30"></td>
+                </tr>
+                <tr>
+                    <td>Nim</td>
+                    <td><input type="text" name="nim" size="20"></td>
+                </tr>
+                <tr>
+                    <td>E-mail</td>
+                    <td><input type="text" name="email" size="30"></td>
+                </tr>
+                <tr>
+                    <td>Tanggal Lahir</td>
+                    <td><input type="date" name="tgl_lahir"></td>
+                </tr>
+                <tr>
+                    <td>Jenis Kelamin</td>
+                    <td>
+                        <input type="radio" name="jk" value="L"> Laki-laki <br>
+                        <input type="radio" name="jk" value="P"> Perempuan
+                    </td>
+                </tr>
+                <tr>
+                    <td>Pilih Program Kursus</td>
+                    <td>
+                        <input type="checkbox"> C# <br>
+                        <input type="checkbox"> Java <br>
+                        <input type="checkbox"> SQL <br>
+                        <input type="checkbox"> HTML dan PHP
+                    </td>
+                </tr>
+                <tr>
+                    <td>Pilihan Hari/Jam Kursus</td>
+                    <td>
+                        <select name="jadwal">
+                            <option>Senin - Rabu/09.00 - 11.00</option>
+                            <option>Kamis - Sabtu/08.00 - 10.00</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset class="komentar-section" style="background-color: salmon">
+            <p style="display: block;">Komentar Anda</p>
+            <textarea name="pesan" cols="60" rows="6"></textarea>
+            <p>
+                <input type="reset" value="Reset">
+                <input type="submit" value="Submit">
+                <input type="button" value="Cancel">
+            </p>
+        </fieldset>
+    </form>
+</body>
+</html>
