@@ -6,6 +6,7 @@
     <title>Form Konsultasi Akademik</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     
     <style>
         .text-twst-gold {
@@ -46,7 +47,7 @@
     </style>
 </head>
 <body class="bg-white">
-
+    <!-- menu atas -->
     <header>
         <div class="text-white py-2 d-none d-md-block" style="background-color: #584b2c;">
             <div class="container-fluid px-4 d-flex justify-content-end align-items-center" style="font-size: 0.85rem;">
@@ -59,8 +60,9 @@
                 <a href="#" class="text-white me-3 fs-5"><i class="bi bi-search"></i></a>
             </div>
         </div>
-
-        <nav class="navbar navbar-expand-lg bg-white py-3 shadow-nav">
+        
+        <!-- menu bawah -->
+        <nav class="navbar navbar-expand-lg bg-white py-3 shadow-twst">
             <div class="container-fluid px-4">
             
                 <a class="navbar-brand d-flex align-items-center" href="#">
@@ -73,27 +75,45 @@
                 <div class="collapse navbar-collapse" id="navbarNavMain">
                     
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fw-bold" style="font-size: 0.9rem;">
+                        
                         <li class="nav-item dropdown me-2">
                             <a class="nav-link dropdown-toggle text-twst-gold" href="#" role="button" data-bs-toggle="dropdown">PROFIL</a>
-                            <ul class="dropdown-menu"><li><a class="dropdown-item" href="#">Sejarah</a></li></ul>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Sejarah</a></li>
+                                <li><a class="dropdown-item" href="#">Visi & Misi</a></li>
+                            </ul>
                         </li>
+                        
                         <li class="nav-item dropdown me-2">
                             <a class="nav-link dropdown-toggle text-twst-gold" href="#" role="button" data-bs-toggle="dropdown">AKADEMIK</a>
-                            <ul class="dropdown-menu"><li><a class="dropdown-item" href="#">Fakultas</a></li></ul>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Fakultas</a></li>
+                                <li><a class="dropdown-item" href="#">Kalender Akademik</a></li>
+                            </ul>
                         </li>
+                        
                         <li class="nav-item dropdown me-2">
                             <a class="nav-link dropdown-toggle text-twst-gold" href="#" role="button" data-bs-toggle="dropdown">KERJASAMA</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Mitra Industri</a></li>
+                                <li><a class="dropdown-item" href="#">Program Magang</a></li>
+                            </ul>
                         </li>
+                        
                         <li class="nav-item dropdown me-2">
                             <a class="nav-link dropdown-toggle text-twst-gold" href="#" role="button" data-bs-toggle="dropdown">MAHASISWA & ALUMNI</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Organisasi Kampus</a></li>
+                                <li><a class="dropdown-item" href="#">Tracer Study Alumni</a></li>
+                            </ul>
                         </li>
+                        
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
 
-    <!-- bagian banner -->
     <section class="hero-banner">
         <div class="container px-4">
             <div class="row">
@@ -107,9 +127,11 @@
         </div>
     </section>
 
+    <!-- deksripsi & form -->
     <section class="container px-4 py-5 my-4">
         <div class="row justify-content-between">
-    
+
+            <!-- teks -->
             <div class="col-lg-5 mb-5 mb-lg-0">
                 <h3 class="fw-bold mb-4" style="color: #5b5e63;">Apa saja yang bisa dikonsultasikan?</h3>
                 
@@ -120,13 +142,14 @@
                     <li><strong>Layanan IT:</strong> Reset password, kendala e-learning, dan akses jaringan kampus.</li>
                 </ul>
                 
-                <div class="mt-4 p-3 bg-light border-start border-4">
+                <div class="mt-4 p-3 bg-light border-start border-4 border-warning">
                     <small class="text-muted">
                         <em>* Untuk kendala yang bersifat mendesak, silakan langsung menghubungi Call Center di (+62) 676967 </em>
                     </small>
                 </div>
             </div>
 
+            <!-- form -->
             <div class="col-lg-6">
                 <div class="bg-light card border-0 shadow-sm p-4 p-md-5">
                     <div class="card-body">
@@ -163,17 +186,32 @@
             </div>
         </div>
     </section>
+
+    <!-- js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        const form = document.getElementById('formKonsultasi');
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('formKonsultasi');
+            
             form.addEventListener('submit', function(event) {
                 event.preventDefault();
+
+                const namaPendaftar = document.getElementById('nama').value;
+                const elemenTopik = document.getElementById('topik');
                 const teksTopik = elemenTopik.options[elemenTopik.selectedIndex].text;
-                const pesanAlert = "Pengajuan konsultasi '" + teksTopik + "' telah berhasil dikirim.\n" +
-                                   "Staff akan segera memproses dan menindaklanjuti laporan Anda.";
-            alert(pesanAlert);
-            form.reset();
+
+                Swal.fire({
+                    title: "Pengajuan Berhasil!",
+                    html: "Terima kasih, <b>" + namaPendaftar + "</b>!<br><br>Pengajuan konsultasi <b>'" + teksTopik + "'</b> telah terkirim. Staff akan segera menindaklanjutinya.",
+                    icon: "success",
+                    confirmButtonColor: "#8d8549",
+                    confirmButtonText: "Baik, Terima Kasih",
+                    backdrop: `rgba(43, 45, 49, 0.8)` 
+                });
+                form.reset();
+            });
         });
     </script>
-    </body>
+</body>
 </html>
