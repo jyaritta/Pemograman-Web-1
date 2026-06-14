@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .text-gold { color: #ffb400 !important; }
+        .bg-navy { background-color: #1a2a4d !important; }
+        .bg-red { background-color: #a52a2a !important; }
+        
+        .btn-navy { background-color: #1a2a4d; color: white; transition: all 0.3s ease; }
+        .btn-navy:hover { 
+            background-color: #ffb400; 
+            color: #1a2a4d; 
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 180, 0, 0.3);
+        }
+
+        .btn-google { transition: all 0.3s ease; background-color: #fff; border: 1px solid #e0e0e0; }
+        .btn-google:hover {
+            background-color: #f8f9fa;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .scroll-menu::-webkit-scrollbar { display: none; }
+        .scroll-menu { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .bg-login-wrapper { background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); }
+
+        .form-control-custom {
+            background-color: #f4f6f8;
+            border: 1px solid transparent;
+            padding: 12px 15px;
+            font-size: 15px;
+            font-weight: 500;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        .form-control-custom:focus {
+            background-color: #fff;
+            border-color: #1a2a4d;
+            box-shadow: 0 0 0 4px rgba(26, 42, 77, 0.1);
+        }
+        .form-control-custom.is-invalid {
+            border-color: #ff4d4d;
+            background-color: #fff;
+            background-image: none;
+            box-shadow: 0 0 0 4px rgba(255, 77, 77, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-navy py-3">
+        <div class="container">
+            <a class="navbar-brand text-gold fw-bold fs-3" href="index.html">LOGO</a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarUtama">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarUtama">
+                <form class="d-flex mx-auto my-3 my-lg-0 w-100" style="max-width: 500px;">
+                    <input class="form-control rounded-pill px-4 py-2" type="search" placeholder="Cari Game...">
+                </form>
+
+                <div class="d-flex align-items-center mt-2 mt-lg-0">
+                    <i class="bi bi-person-circle fs-3 text-white me-2"></i>
+                    <a href="login.html" id="tombolAkun" class="text-gold text-decoration-none fw-bold text-capitalize">Log In</a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bg-red text-white py-2 shadow-sm">
+        <div class="container">
+            <div class="d-flex gap-4 fw-semibold text-nowrap overflow-x-auto scroll-menu py-1" style="font-size: 14px;">
+                <a href="index.html" class="text-white text-decoration-none py-2">Kategori</a>
+                <a href="index.html" class="text-white text-decoration-none py-2">Game</a>
+                <a href="#" class="text-white text-decoration-none py-2">Voucher</a>
+                <a href="#" class="text-white text-decoration-none py-2">Lainnya</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-login-wrapper flex-grow-1 d-flex align-items-center justify-content-center py-5">
+        <div class="container position-relative">
+            
+            <div class="row justify-content-center text-center">
+                <div class="col-12 col-sm-10 col-md-8 col-lg-5">
+                    
+                    <div class="text-start mb-4">
+                        <a href="index.html" class="text-decoration-none text-secondary fw-semibold">
+                            <i class="bi bi-arrow-left me-1"></i> Kembali ke Beranda
+                        </a>
+                    </div>
+
+                    <div class="card border-0 shadow-lg p-4 p-md-5 text-start rounded-4">
+                        
+                        <div class="text-center mb-4">
+                            <h1 class="text-navy fw-bold mb-1" style="font-size: 36px;">Welcome Back!</h1>
+                            <p class="text-muted small">Silakan login untuk mulai transaksi</p>
+                        </div>
+
+                        <form id="loginForm" autocomplete="on">
+                            
+                            <div class="mb-3">
+                                <label class="form-label text-secondary fw-bold" style="font-size: 12px; letter-spacing: 0.5px;">ALAMAT EMAIL</label>
+                                <input type="email" id="emailInput" name="email" class="form-control form-control-custom" placeholder="contoh: player@gmail.com" required>
+                                <div class="invalid-feedback fw-semibold mt-2" id="errorMsg" style="font-size: 12px;">
+                                    <i class="bi bi-exclamation-circle-fill me-1"></i> Format email tidak valid!
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label text-secondary fw-bold" style="font-size: 12px; letter-spacing: 0.5px;">PASSWORD</label>
+                                <input type="password" id="passwordInput" name="password" class="form-control form-control-custom" placeholder="Masukkan password..." required>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-navy w-100 fw-bold py-3 rounded-3 mt-2" style="font-size: 15px;">
+                                Masuk ke Akun
+                            </button>
+                        </form>
+
+                        <div class="position-relative my-4 text-center">
+                            <hr class="text-muted border-2 opacity-25">
+                            <span class="position-absolute top-50 start-50 translate-middle px-3 fw-bold text-muted" style="background-color: white; font-size: 11px;">ATAU LOGIN DENGAN</span>
+                        </div>
+
+                        <button class="btn btn-google w-100 fw-semibold d-flex align-items-center justify-content-center py-2 rounded-3 text-dark">
+                            <img src="https://www.gstatic.com/images/branding/product/1x/googleg_48dp.png" style="width:20px" alt="G" class="me-2">
+                            Google
+                        </button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const emailInput = document.getElementById('emailInput');
+        const passwordInput = document.getElementById('passwordInput');
+        const errorMsg = document.getElementById('errorMsg');
+
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (emailPattern.test(emailInput.value)) {
+                if(passwordInput.value === "123") {
+
+                    const namaUser = emailInput.value.split('@')[0]; 
+                    localStorage.setItem('userAktif', namaUser);
+
+                    Swal.fire({
+                        title: "Login Berhasil!",
+                        text: "Selamat datang kembali, " + namaUser + "!",
+                        icon: "success",
+                        confirmButtonColor: "#1a2a4d",
+                        confirmButtonText: "Mulai Transaksi",
+                        backdrop: `rgba(26, 42, 77, 0.8)`
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = "index.html";
+                        }
+                    });
+                } else {
+                    Swal.fire({
+                        title: "Login Gagal!",
+                        text: "Password yang Anda masukkan salah.",
+                        icon: "error",
+                        confirmButtonColor: "#a52a2a",
+                        confirmButtonText: "Coba Lagi"
+                    });
+                }
+            } else {
+                emailInput.classList.add('is-invalid');
+                errorMsg.style.display = 'block';
+            }
+        });
+
+        emailInput.addEventListener('input', function() {
+            emailInput.classList.remove('is-invalid');
+            errorMsg.style.display = 'none';
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <script> // script ganti log in jdi nama user
+        document.addEventListener('DOMContentLoaded', function() {
+            const namaUser = localStorage.getItem('userAktif');
+            const tombolAkun = document.getElementById('tombolAkun');
+
+            if (namaUser && tombolAkun) {
+                tombolAkun.innerText = namaUser;
+                
+                // log out
+                tombolAkun.href = "#"; 
+                tombolAkun.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    Swal.fire({
+                        title: "Logout?",
+                        text: "Anda akan keluar dari sesi saat ini.",
+                        icon: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#a52a2a",
+                        cancelButtonColor: "#1a2a4d",
+                        confirmButtonText: "Ya, Logout",
+                        cancelButtonText: "Batal"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            localStorage.removeItem('userAktif');
+                            window.location.reload();
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+    
+</body>
+</html>
