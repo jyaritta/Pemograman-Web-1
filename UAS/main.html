@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Konsultasi Akademik</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        .text-twst-gold {
+            color: #8d8549 !important;
+        }
+
+        .shadow-twst {
+            position: relative;
+            z-index: 1050; 
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+        }
+
+        .hero-banner {
+            background-image: linear-gradient(to right, rgba(43, 45, 49, 0.8), rgba(239, 197, 83, 0.3)), url('https://twisted-wonderland.aniplex.co.jp/wp-content/themes/violet/assets/images/module/bg/footer@sp.png?v=20190808');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+        }
+
+        @media (max-width: 991.98px) {
+            #navbarNavMain {
+                border-top: 3px solid rgba(0,0,0,0.05);
+                box-shadow: inset 0px 8px 10px -10px rgba(0, 0, 0, 0.15);
+                padding-top: 15px;
+                margin-top: 15px;
+            }
+        }
+
+        .form-custom {
+            background-color: #ffffff;
+            border: none;
+            border-bottom: 2px solid #8d8549;
+            border-radius: 0; 
+            box-shadow: none !important;
+        }
+
+    </style>
+</head>
+<body class="bg-white">
+
+    <header>
+        <div class="text-white py-2 d-none d-md-block" style="background-color: #584b2c;">
+            <div class="container-fluid px-4 d-flex justify-content-end align-items-center" style="font-size: 0.85rem;">
+                
+                <a href="#" class="text-white text-decoration-none me-3 fw-semibold">PENGUMUMAN<i class="bi bi-chevron-down ms-1"></i></a>
+                <a href="#" class="text-white text-decoration-none me-3 fw-semibold">E-LEARNING<i class="bi bi-chevron-down ms-1"></i></a>
+                <a href="#" class="text-white text-decoration-none me-3 fw-semibold">DIREKTORI DOSEN</a>
+                <a href="#" class="text-white text-decoration-none me-4 fw-semibold">JALUR MASUK</a>
+                
+                <a href="#" class="text-white me-3 fs-5"><i class="bi bi-search"></i></a>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg bg-white py-3 shadow-nav">
+            <div class="container-fluid px-4">
+            
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="https://twisted-wonderland.aniplex.co.jp/wp-content/themes/violet/assets/images/characters/college_dormitory-archive%402x.png" height="50">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavMain" aria-controls="navbarNavMain" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavMain">
+                    
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fw-bold" style="font-size: 0.9rem;">
+                        <li class="nav-item dropdown me-2">
+                            <a class="nav-link dropdown-toggle text-twst-gold" href="#" role="button" data-bs-toggle="dropdown">PROFIL</a>
+                            <ul class="dropdown-menu"><li><a class="dropdown-item" href="#">Sejarah</a></li></ul>
+                        </li>
+                        <li class="nav-item dropdown me-2">
+                            <a class="nav-link dropdown-toggle text-twst-gold" href="#" role="button" data-bs-toggle="dropdown">AKADEMIK</a>
+                            <ul class="dropdown-menu"><li><a class="dropdown-item" href="#">Fakultas</a></li></ul>
+                        </li>
+                        <li class="nav-item dropdown me-2">
+                            <a class="nav-link dropdown-toggle text-twst-gold" href="#" role="button" data-bs-toggle="dropdown">KERJASAMA</a>
+                        </li>
+                        <li class="nav-item dropdown me-2">
+                            <a class="nav-link dropdown-toggle text-twst-gold" href="#" role="button" data-bs-toggle="dropdown">MAHASISWA & ALUMNI</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- bagian banner -->
+    <section class="hero-banner">
+        <div class="container px-4">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="fw-bold display-5 mb-3">Selamat Datang</h1>
+                    <p class="fs-5" style="opacity: 0.9;">
+                        Konsultasi Akademik Universitas Gagak Malam ditunjukan untuk memudahkan pelayanan konsultasi kepada seluruh civitas akademika. Sampaikan kendala Anda, dan kami akan membantu menemukan solusinya.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container px-4 py-5 my-4">
+        <div class="row justify-content-between">
+    
+            <div class="col-lg-5 mb-5 mb-lg-0">
+                <h3 class="fw-bold mb-4" style="color: #5b5e63;">Apa saja yang bisa dikonsultasikan?</h3>
+                
+                <ul class="text-muted" style="line-height: 1.8;">
+                    <li><strong>Administrasi Akademik:</strong> Kendala pengisian KRS, masalah portal TWST, atau perbaikan nilai.</li>
+                    <li><strong>Bimbingan & Evaluasi:</strong> Pengajuan jadwal bimbingan skripsi, internship, atau evaluasi hasil studi.</li>
+                    <li><strong>Fasilitas Kampus:</strong> Laporan kerusakan fasilitas asrama, lab komputer, atau ruang kelas.</li>
+                    <li><strong>Layanan IT:</strong> Reset password, kendala e-learning, dan akses jaringan kampus.</li>
+                </ul>
+                
+                <div class="mt-4 p-3 bg-light border-start border-4">
+                    <small class="text-muted">
+                        <em>* Untuk kendala yang bersifat mendesak, silakan langsung menghubungi Call Center di (+62) 676967 </em>
+                    </small>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="bg-light card border-0 shadow-sm p-4 p-md-5">
+                    <div class="card-body">
+                        
+                        <h4 class="fw-bold mb-1 text-dark">Form Pengajuan</h4>
+                        <p class="text-muted mb-4 fs-6">Silakan lengkapi data berikut.</p>
+                        
+                        <form id="formKonsultasi">
+                            <div class="mb-4">
+                                <input type="text" class="form-control form-custom py-2" id="nama" placeholder="Nama Lengkap *" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <select class="form-select form-custom py-2" id="topik" required>
+                                    <option value="" selected disabled>Pilih Topik Konsultasi *</option>
+                                    <option value="Akademik">Administrasi Akademik</option>
+                                    <option value="Bimbingan">Bimbingan & Evaluasi</option>
+                                    <option value="Fasilitas">Fasilitas Kampus</option>
+                                    <option value="IT">Layanan IT / Jaringan</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-5">
+                                <textarea class="form-control form-custom py-2" id="pesan" rows="4" placeholder="Detail Pesan / Kendala *" required></textarea>
+                            </div>
+
+                            <div class="d-grid">
+                                <button type="submit" class="btn fw-bold py-3 text-white" style="background-color: #2B2D31;">SUBMIT PENGAJUAN</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const form = document.getElementById('formKonsultasi');
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const teksTopik = elemenTopik.options[elemenTopik.selectedIndex].text;
+                const pesanAlert = "Pengajuan konsultasi '" + teksTopik + "' telah berhasil dikirim.\n" +
+                                   "Staff akan segera memproses dan menindaklanjuti laporan Anda.";
+            alert(pesanAlert);
+            form.reset();
+        });
+    </script>
+    </body>
+</html>
